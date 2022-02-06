@@ -21,6 +21,7 @@
 		A05C3CD227AF931100CEFDE6 /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05C3CD127AF931100CEFDE6 /* MoviesViewController.swift */; };
 		A05C3CD427AFA16A00CEFDE6 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05C3CD327AFA16A00CEFDE6 /* MovieCell.swift */; };
 		A05C3CD727B0550A00CEFDE6 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = A05C3CD627B0550A00CEFDE6 /* AlamofireImage */; };
+		A790AF99091F1B93EF990319 /* Pods_Flix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CB609622ACBEFF5E44DE1A2 /* Pods_Flix.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
