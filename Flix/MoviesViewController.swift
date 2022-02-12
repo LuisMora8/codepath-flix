@@ -25,7 +25,6 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.dataSource = self
         tableView.delegate = self
         // Do any additional setup after loading the view.
-        print("hello")
         
         let url = URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed")!
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
@@ -42,7 +41,6 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
                  
                  self.tableView.reloadData()
                  //printing Dictionary loaded from the API to the console
-                 print(dataDictionary)
                     // TODO: Get the array of movies
                     // TODO: Store the movies in a property to use elsewhere
                     // TODO: Reload your table view data
@@ -81,14 +79,25 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         return cell
     }
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        print("loading up the details screen")
+        
+        // Find the selected movie
+        let cell = sender as! UITableViewCell //the sender is actually the UITableView cell
+        let indexPath = tableView.indexPath(for: cell)! // table view knows for a given cell what the indexPath is
+        let movie = movies[indexPath.row] //the movie is the indexPath in the movies array
+        
+        // Pass the selected movie tot the details view controller
+        let detailsViewController = segue.destination as! MovieDetailsViewController
+        detailsViewController.movie = movie
+        
+        //deselecting the selected movie
+        tableView.deselectRow(at: indexPath, animated: true)
     }
-    */
 
 }
