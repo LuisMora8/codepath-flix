@@ -104,9 +104,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="363"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fUM-TC-JCg">
+                            <imageView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fUM-TC-JCg">
                                 <rect key="frame" x="20" y="256" width="115" height="184"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="orr-Zd-XMA" appends="YES" id="r68-Bk-wv1"/>
+                                </connections>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkc-in-jPf">
                                 <rect key="frame" x="143" y="359" width="251" height="69"/>
@@ -131,12 +135,45 @@
                         <outlet property="backdropImageView" destination="r1P-vy-pmS" id="dDk-DH-yde"/>
                         <outlet property="posterView" destination="fUM-TC-JCg" id="aOZ-Sm-Kol"/>
                         <outlet property="synopsisLabel" destination="NaC-5q-8Cw" id="QdA-Vk-j3A"/>
+                        <outlet property="tapPosterGesture" destination="orr-Zd-XMA" id="yho-yv-4du"/>
                         <outlet property="titleLabel" destination="gkc-in-jPf" id="o8P-Lc-yAh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1dv-WG-IS9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="orr-Zd-XMA">
+                    <connections>
+                        <outlet property="delegate" destination="fUM-TC-JCg" id="8N6-NE-Ug6"/>
+                        <segue destination="h8b-Bv-VUt" kind="presentation" identifier="webViewSegue" id="dpH-Ff-mmT"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-659" y="1037"/>
+            <point key="canvasLocation" x="-659" y="1054"/>
+        </scene>
+        <!--Movie Web Trailer View Controller-->
+        <scene sceneID="e6W-cU-3u4">
+            <objects>
+                <viewController id="h8b-Bv-VUt" customClass="MovieWebTrailerViewController" customModule="Flix" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zxG-Cw-6hZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" customUserAgent="" translatesAutoresizingMaskIntoConstraints="NO" id="uB0-J6-XTB">
+                                <rect key="frame" x="0.0" y="-54" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="a78-Dz-aGW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HTk-cf-gwr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-659.4202898550725" y="1768.5267857142856"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="lDo-Kn-weO">
@@ -210,6 +247,7 @@
                                         <size key="customSize" width="199" height="240"/>
                                         <connections>
                                             <outlet property="posterView" destination="6An-gH-1jz" id="cCS-W7-VGK"/>
+                                            <segue destination="fhv-hf-yFz" kind="show" id="Cws-oI-FIm"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -247,6 +285,9 @@
             <point key="canvasLocation" x="1456.521739130435" y="-380.35714285714283"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Cws-oI-FIm"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="now_playing_tabbar_item" width="21" height="21"/>
         <image name="superhero_tabbar_item" width="21" height="23"/>
