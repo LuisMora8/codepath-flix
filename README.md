@@ -6,13 +6,10 @@ Flix is an app that allows users to browse movies from the [The Movie Database A
 
 ### User Stories
 
-#### REQUIRED (10pts)
-- [x] (5pts) User can tap a cell to see more details about a particular movie.
-- [x] (5pts) User can tap a tab bar button to view a grid layout of Movie Posters using a CollectionView.
-
-#### BONUS
-- [x] (2pts) User can tap a poster in the collection view to see a detail screen of that movie.
-- [x] (2pts) In the detail view, when the user taps the poster, a new screen is presented modally where they can view the trailer.
+- [x] User can tap a cell to see more details about a particular movie.
+- [x] User can tap a tab bar button to view a grid layout of Movie Posters using a CollectionView.
+- [x] User can tap a poster in the collection view to see a detail screen of that movie.
+- [x] In the detail view, when the user taps the poster, a new screen is presented modally where they can view the trailer.
 
 ### App Walkthrough GIF
 
@@ -20,23 +17,19 @@ Flix is an app that allows users to browse movies from the [The Movie Database A
 
 
 ### Notes
-Describe any challenges encountered while building the app.
+Obtaining the trailers for the movies was a challenge. This was done by requesting the json from the selected movie and then saving the data as dictionaries. Using the array of trailers, the default first trailer in the array was used to open a webview.
 
 ---
 
 ## Flix Part 1
 
 ### User Stories
-`TODO://` In the **User Stories section below**, add an `x` in the `-[ ]` like this `- [x]` for any user story you complete. (🚫 Remove this paragraph after checking off completed user stories)
 
-#### REQUIRED (10pts)
-- [X] (2pts) User sees an app icon on the home screen and a styled launch screen.
-- [x] (5pts) User can view and scroll through a list of movies now playing in theaters.
-- [x] (3pts) User can view the movie poster image for each movie.
-
-#### BONUS
-- [x] (2pt) User can view the app on various device sizes and orientations.
-- [x] (1pt) Run your app on a real device.
+- [X] User sees an app icon on the home screen and a styled launch screen.
+- [x] User can view and scroll through a list of movies now playing in theaters.
+- [x] User can view the movie poster image for each movie.
+- [x] User can view the app on various device sizes and orientations.
+- [x] Run your app on a real device.
 
 ### App Walkthrough GIF
 <img src="https://i.imgur.com/nTnc6CS.gif" width=250><br>
